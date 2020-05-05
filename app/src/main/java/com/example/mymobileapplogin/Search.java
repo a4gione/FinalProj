@@ -22,7 +22,7 @@ import java.net.URISyntaxException;
 public class Search extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.mymobileapplogin";
     Button searchXP;
-    EditText text;
+    EditText textXP;
     RequestQueue queue;
 
     //API
@@ -34,7 +34,7 @@ public class Search extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
         searchXP = findViewById(R.id.button);
-        text = findViewById(R.id.editText);
+        textXP = findViewById(R.id.editText);
 
         //Volley Request
         queue = queue = Volley.newRequestQueue(this);
@@ -43,7 +43,7 @@ public class Search extends AppCompatActivity {
     }
 
     public void searchClicked(View v) {
-        String query = text.getText().toString(); //Get the title of the movie.
+        String query = textXP.getText().toString(); //Get the title of the movie.
         String url = String.format("https://www.omdbapi.com/?t=%s&apikey=%s", query, api_key);
         System.out.println(url);
 
