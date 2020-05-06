@@ -1,12 +1,14 @@
 package com.example.mymobileapplogin;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
@@ -24,6 +26,7 @@ public class Search extends AppCompatActivity {
     Button searchXP;
     EditText textXP;
     RequestQueue queue;
+    Button favoritesXP;
 
     //API
     private final String api_key = "1671dd55";
@@ -35,10 +38,23 @@ public class Search extends AppCompatActivity {
 
         searchXP = findViewById(R.id.button);
         textXP = findViewById(R.id.editText);
+        favoritesXP = findViewById(R.id.button2);
 
         //Volley Request
         queue = queue = Volley.newRequestQueue(this);
 
+        favoritesXP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Search.class);
+                // validate user
+//                if (ed1.getText().toString().equals("admin") &&
+//                        ed2.getText().toString().equals("admin"))
+                Toast.makeText(getApplicationContext(),
+                        "ADDED TO FAVORITES", Toast.LENGTH_LONG).show();
+                startActivity(intent);
+            }
+        });
 
     }
 

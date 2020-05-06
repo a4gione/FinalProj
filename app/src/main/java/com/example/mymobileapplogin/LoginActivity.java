@@ -2,7 +2,6 @@ package com.example.mymobileapplogin;
 
 import android.content.Intent;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -64,7 +63,7 @@ public class LoginActivity extends Activity {
     }
 
     private boolean validateUser(User user) {
-        // call db functions to see if user exists and validate password
+        //Call db functions to see if user exists and validate password
         return true;
     }
 }
